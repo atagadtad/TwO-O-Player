@@ -1,6 +1,5 @@
 require './player'
 require './question'
-require './score'
 
 p1 = Player.new('Player 1')
 p2 = Player.new('Player 2')
@@ -31,8 +30,13 @@ while current_player.lives > 0 do
   end
 
   if current_player.lives == 0
-    puts "---- GAME OVER ----"
-    puts "#{p2.name} wins with a score of #{p2.lives}/3"
+    if current_player == p1
+      puts "---- GAME OVER ----"
+      puts "#{p2.name} wins with a score of #{p2.lives}/3"
+    else
+      puts "---- GAME OVER ----"
+      puts "#{p1.name} wins with a score of #{p1.lives}/3"
+    end
   end
 
 end
